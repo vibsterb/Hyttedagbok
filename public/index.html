@@ -1,22 +1,105 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Hyttedagboka</title>
-        <link href="css.css" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <title>Hyttedagboka</title>
+  <link href="css.css" rel="stylesheet" type="text/css">
+</head>
 
-    </head>
-    <body>
+<body>
+  <div class="wrapper">
+    <div id="mainContainer"></div>
 
-            <h1>Grisungen</h1>
-            <div id="front">
+    <template id="startTemplate">
+      <div id="startContainer">
 
-                <div class="blueBox" id="rou">Rutiner</div>
+        <div id="startGrid1" class="heading">GRISUNGEN</div>
 
-                <div class="blueBox" id="cal">Kalendar</div>
+        <div id="startGrid2">
+          <div id="loginStart" class="loginButton"> Logg inn </div>
 
-                <div class="blueBox" id="dia">Dagbok</div>
+          <div id="loginDiv" style="display: none;">
+            <form id="loginForm" class="loginInputFrame">
+              <input id="username" type="text" placeholder=" brukernavn" required>
+              <input id="password" type="password" placeholder=" passord" required>
+              <button class="button">Logg inn</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </template>
 
-            </div>
+    <template id="calTemplate">
+      <div id="calContainer">
+        <div id="calGrid1" class="heading">Kalender</div>
 
-    </body>
+        <div id="calGrid2">
+          <span id="currentMonth" class="headingSmall"></span>
+          <span id="currentYear" class="headingSmall"> </span>
+
+        </div>
+        <div id="calGrid3">
+          <div id="0-1" class="dayName">Mandag</div>
+          <div id="0-2" class="dayName">Tirsdag</div>
+          <div id="0-3" class="dayName">Onsdag</div>
+          <div id="0-4" class="dayName">Torsdag</div>
+          <div id="0-5" class="dayName">Fredag</div>
+          <div id="0-6" class="dayName">Lørdag</div>
+          <div id="0-7" class="dayName">Søndag</div>
+
+          <div id="1-1" class="calCell"></div>
+          <div id="1-2" class="calCell"></div>
+          <div id="1-3" class="calCell"></div>
+          <div id="1-4" class="calCell"></div>
+          <div id="1-5" class="calCell"></div>
+          <div id="1-6" class="calCell"></div>
+          <div id="1-7" class="calCell"></div>
+
+          <div id="2-1" class="calCell"></div>
+          <div id="2-2" class="calCell"></div>
+          <div id="2-3" class="calCell"></div>
+          <div id="2-4" class="calCell"></div>
+          <div id="2-5" class="calCell"></div>
+          <div id="2-6" class="calCell"></div>
+          <div id="2-7" class="calCell"></div>
+
+          <div id="3-1" class="calCell"></div>
+          <div id="3-2" class="calCell"></div>
+          <div id="3-3" class="calCell"></div>
+          <div id="3-4" class="calCell"></div>
+          <div id="3-5" class="calCell"></div>
+          <div id="3-6" class="calCell"></div>
+          <div id="3-7" class="calCell"></div>
+
+          <div id="4-1" class="calCell"></div>
+          <div id="4-2" class="calCell"></div>
+          <div id="4-3" class="calCell"></div>
+          <div id="4-4" class="calCell"></div>
+          <div id="4-5" class="calCell"></div>
+          <div id="4-6" class="calCell"></div>
+          <div id="4-7" class="calCell"></div>
+
+          <div id="5-1" class="calCell"></div>
+          <div id="5-2" class="calCell"></div>
+          <div id="5-3" class="calCell"></div>
+          <div id="5-4" class="calCell"></div>
+          <div id="5-5" class="calCell"></div>
+          <div id="5-6" class="calCell"></div>
+          <div id="5-7" class="calCell"></div>
+
+          <div id="6-1" class="calCell"></div>
+          <div id="6-2" class="calCell"></div>
+          <div id="6-3" class="calCell"></div>
+          <div id="6-4" class="calCell"></div>
+          <div id="6-5" class="calCell"></div>
+          <div id="6-6" class="calCell"></div>
+          <div id="6-7" class="calCell"></div>
+        </div>
+      </div>
+    </template>
+
+  </div>
+
+</body>
+<script type="text/javascript" src="javascript/startup.js"></script>
 </html>

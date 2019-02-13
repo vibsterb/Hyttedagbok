@@ -1,38 +1,152 @@
-*{
-    color: skyblue;
-    box-sizing: border-box;
-    text-align: center;
-    font-family: sans-serif;
+/* css for media queries */
+
+@media all  {
+  #startContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% auto;
+    height: 100%;
+  }
+
+  #startGrid1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+
+  #startGrid2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
 }
 
+@media all  {
+  #calContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 12% 10% auto;
+    height: 100%;
+  }
 
+  #calGrid1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    text-align: center;
+  }
+
+  #calGrid2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    text-align: center;
+  }
+
+  #calGrid3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: 1em auto auto auto auto auto auto;
+
+    padding: 10%;
+  }
+
+}
+
+/* css for all elements */
+
+* {
+  font-family: sans-serif;
+  font-family: verdana;
+}
 body {
     background-image: url("images/utsikt.png");
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: absolute;
     background-size: cover;
 }
 
-#front {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
+/* ------------------- */
 
+.wrapper {
+  background-color: rgba(200, 240, 250, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.blueBox{
-    border: solid 2px skyblue;
-    padding: 10px;
-    margin: 20px;
-    width: 150px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
-    font-size: 14pt;
-
+.heading {
+  text-align: center;
+  font-size: 40pt;
+  color: rgb(30, 130, 90);
+  text-shadow: 0 2px #5ba0f0, 2px 0 #5ba0f0;
+  margin-top: 20px;
 }
 
-.blueBox:hover {
-    box-shadow: 0 0 10px skyblue;
+.headingSmall {
+  text-align: center;
+  font-size: 25pt;
+  color: rgb(30, 130, 90);
+  text-shadow: 0 2px #5ba0f0, 2px 0 #5ba0f0;
+  margin-top: 20px;
+}
+
+.loginButton{
+  color: rgb(30, 130, 90);
+  text-shadow: 0 1px #5ba0f0, 1px 0 #5ba0f0;;
+  border: solid 3px rgb(30, 130, 90);
+  padding: 10px;
+  margin: 20px;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  font-size: 18pt;
+  text-align: center;
+  line-height: 2em;
+}
+
+.loginButton:hover {
+    box-shadow: 0 0 10px rgb(30, 130, 90);
+}
+
+.loginInputFrame {
+  background-color: rgba(30, 130, 90, 0.5);
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.button {
+  border-radius: 5px;
+  background-color: #5ba0f0;
+  border: none;
+  margin: 5px;
+  padding: 5px 10px;
+  color: rgb(30, 130, 90);
+  text-shadow: 1px 0 darkgrey;
+}
+
+input#username, #password {
+  display: block;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.calCell {
+  border: solid grey 1px;
+}
+
+.dayName {
+  font-size: small;
+  text-align: center;
+  color: grey;
+
 }
