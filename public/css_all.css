@@ -1,59 +1,5 @@
-/* css for media queries */
-
-@media all  {
-  #startContainer {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 20% auto;
-    height: 100%;
-  }
-
-  #startGrid1 {
-    grid-column-start: 1;
-    grid-row-start: 1;
-  }
-
-  #startGrid2 {
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-
-}
-
-@media all  {
-  #calContainer {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 12% 10% auto;
-    height: 100%;
-  }
-
-  #calGrid1 {
-    grid-column-start: 1;
-    grid-row-start: 1;
-    text-align: center;
-  }
-
-  #calGrid2 {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    text-align: center;
-  }
-
-  #calGrid3 {
-    grid-column-start: 1;
-    grid-row-start: 3;
-
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    grid-template-rows: 1em auto auto auto auto auto auto;
-
-    padding: 10%;
-  }
-
-}
-
 /* css for all elements */
+
 
 * {
   font-family: sans-serif;
@@ -79,19 +25,20 @@ body {
 
 .heading {
   text-align: center;
-  font-size: 40pt;
+  font-size: 30pt;
   color: rgb(30, 130, 90);
-  text-shadow: 0 2px #5ba0f0, 2px 0 #5ba0f0;
+  text-shadow: 0 1px #5ba0f0, 2px 0 #5ba0f0;
   margin-top: 20px;
 }
 
 .headingSmall {
   text-align: center;
-  font-size: 25pt;
+  font-size: 20pt;
   color: rgb(30, 130, 90);
-  text-shadow: 0 2px #5ba0f0, 2px 0 #5ba0f0;
+  text-shadow: 0 1px #5ba0f0, 2px 0 #5ba0f0;
   margin-top: 20px;
 }
+
 
 .loginButton{
   color: rgb(30, 130, 90);
@@ -140,13 +87,7 @@ input#username, #password {
   margin: 10px auto;
 }
 
-.calCell {
-  border: solid grey 1px;
-}
 
-.dayName {
-  font-size: small;
-  text-align: center;
-  color: grey;
-
+#nextMonth, #prevMonth {
+  cursor: pointer;
 }

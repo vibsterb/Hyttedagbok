@@ -3,11 +3,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>Hyttedagboka</title>
-  <link href="css.css" rel="stylesheet" type="text/css">
+  <link href="css_all.css" rel="stylesheet" type="text/css">
+  <link href="css_media.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
   <div class="wrapper">
+
+    <div id="menu">
+      <div class="menuDiv">
+        <div id="menuBtn"><img id="menuImg" src="images/menu24.png"></div>
+        <div id="menu-content">
+        <!--  <div id="logout">Logg ut</div>-->
+        </div>
+      </div>
+    </div>
+
     <div id="mainContainer"></div>
 
     <template id="startTemplate">
@@ -31,14 +42,20 @@
 
     <template id="calTemplate">
       <div id="calContainer">
-        <div id="calGrid1" class="heading">Kalender</div>
+        <!--  <div id="calGrid1" class="heading">Kalender</div> -->
+        <div id="calGrid1" class="heading">
+          <span id="currentMonth"></span>
+          <span id="currentYear"></span>
+        </div>
 
         <div id="calGrid2">
-          <span id="currentMonth" class="headingSmall"></span>
-          <span id="currentYear" class="headingSmall"> </span>
+          <span id="prevMonth" class="headingSmall">< </span>
+
+          <span id="nextMonth" class="headingSmall"> ></span>
 
         </div>
         <div id="calGrid3">
+
           <div id="0-1" class="dayName">Mandag</div>
           <div id="0-2" class="dayName">Tirsdag</div>
           <div id="0-3" class="dayName">Onsdag</div>
@@ -96,10 +113,12 @@
           <div id="6-7" class="calCell"></div>
         </div>
       </div>
+
     </template>
 
   </div>
 
 </body>
 <script type="text/javascript" src="javascript/startup.js"></script>
+<script type="text/javascript" src="javascript/calendar.js"></script>
 </html>

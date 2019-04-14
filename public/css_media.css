@@ -1,0 +1,131 @@
+/* css for media queries */
+
+@media all  {
+  #startContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% auto;
+    height: 100%;
+  }
+
+  #startGrid1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+
+  #startGrid2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+}
+
+/*små skjermer, opptil 400px*/
+@media all and (max-width: 450px) {
+  #calContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 4.5em 3em auto;
+    height: 100%;
+  }
+
+  #calGrid1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    text-align: center;
+  }
+
+  #calGrid2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    text-align: center;
+  }
+
+  #calGrid3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+
+    display: grid;
+
+
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: 1em auto auto auto auto auto auto;
+
+    padding: 5%;
+  }
+
+ .dayName {
+    font-size: 8pt;
+    text-align: center;
+    color: grey;
+  }
+
+  .calCell {
+    font-size: 8pt;
+    border: solid grey 1px;
+    color: grey;
+  }
+
+}
+
+@media all and (min-width: 450px) {
+  #calContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 4.5em 3em auto;
+    height: 100%;
+  }
+
+  #calGrid1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    text-align: center;
+  }
+
+  #calGrid2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    text-align: center;
+  }
+
+  #calGrid3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+
+    display: grid;
+
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: 1em auto auto auto auto auto auto;
+
+    padding: 5%;
+  }
+
+  .dayName {
+    font-size: 11pt;
+    text-align: center;
+    color: grey;
+  }
+
+  .calCell {
+    font-size: 11pt;
+    border: solid grey 1px;
+    color: grey;
+  }
+
+}
+
+@media all and (min-width: 950px) {
+
+  #calGrid3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+
+    display: grid;
+
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: 1em auto auto auto auto auto auto;
+
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

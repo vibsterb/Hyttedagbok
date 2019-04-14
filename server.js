@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+//const auth = require("./modules/auth.js");
 
 app.set('port', (process.env.PORT || 8080));
 app.use(express.static('public'));
