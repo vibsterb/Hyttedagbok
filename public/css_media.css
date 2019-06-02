@@ -1,5 +1,6 @@
 /* css for media queries */
 
+/*Logg inn */
 @media all  {
   #startContainer {
     display: grid;
@@ -19,6 +20,28 @@
   }
 
 }
+
+/*Hovedmeny*/
+@media all  {
+  #menuContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10% auto;
+    height: 100%;
+  }
+
+  #menuHeader {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+
+  #menuBody {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+
+/*Kalender*/
 
 /*små skjermer, opptil 400px*/
 @media all and (max-width: 450px) {
@@ -57,13 +80,13 @@
  .dayName {
     font-size: 8pt;
     text-align: center;
-    color: grey;
+      /*  color: grey;*/
   }
 
   .calCell {
     font-size: 8pt;
     border: solid grey 1px;
-    color: grey;
+      /*  color: grey;*/
   }
 
 }
@@ -103,13 +126,13 @@
   .dayName {
     font-size: 11pt;
     text-align: center;
-    color: grey;
+  /*  color: grey;*/
   }
 
   .calCell {
     font-size: 11pt;
     border: solid grey 1px;
-    color: grey;
+    /*color: grey;*/
   }
 
 }

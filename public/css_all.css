@@ -7,7 +7,7 @@
 }
 body {
     background-image: url("images/utsikt.png");
-    background-position: center;
+    background-position: center; /* funker ikke på firefox */
     background-attachment: absolute;
     background-size: cover;
 }
@@ -90,4 +90,8 @@ input#username, #password {
 
 #nextMonth, #prevMonth {
   cursor: pointer;
+}
+
+.weekend {
+  color: grey;
 }

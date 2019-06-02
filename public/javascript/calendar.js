@@ -87,12 +87,14 @@ function showCal(){
 
     if(weekday === 0){
       let div = document.getElementById(row +"-"+ "7");
-      div.innerHTML = i ;
+      div.innerHTML = i;
       row++;  //etter søndag øker kalenderrad med 1
+      div.onclick = newEvent;
     }
     else {
       let div = document.getElementById(row +"-"+ weekday);
-      div.innerHTML = i ;
+      div.innerHTML = i;
+      div.onclick = newEvent;
     }
   }
 }
@@ -103,4 +105,9 @@ function clearCells() {
   for(let i=0; i<cells.length; i++){
     cells[i].innerHTML ="";
   }
+}
+
+//legge til ny hendelse i kalenderen
+function newEvent(evt) {
+  console.log(evt.target);
 }

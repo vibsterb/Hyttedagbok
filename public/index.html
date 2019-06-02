@@ -14,7 +14,7 @@
       <div class="menuDiv">
         <div id="menuBtn"><img id="menuImg" src="images/menu24.png"></div>
         <div id="menu-content">
-        <!--  <div id="logout">Logg ut</div>-->
+          <!--  <div id="logout">Logg ut</div>-->
         </div>
       </div>
     </div>
@@ -40,6 +40,35 @@
       </div>
     </template>
 
+    <template id="menuTemplate">
+      <div id=menuContainer>
+        <div id="menuHeader">
+          <span>Menylinje med menyikon</span>
+        </div>
+
+        <div id="menuBody">
+          <div id="calButton">Kalender</div>
+          <div>Gjestebok</div>
+          <div>Vedlikehold</div>
+          <div id="userAdmin" style="display: none;">Brukeradministrasjon</div>
+
+        </div>
+
+      </div>
+
+    </template>
+
+    <template id="admin">
+      <div>
+        <form id="updUser" class="loginInputFrame">
+          <span>Brukeradministrasjon</span>
+          <input id="username" type="text" placeholder=" brukernavn" required>
+          <input id="newPassword" type="password" placeholder=" passord" required>
+          <button class="button">Sett nytt passord</button>
+        </form>
+      </div>
+    </template>
+
     <template id="calTemplate">
       <div id="calContainer">
         <!--  <div id="calGrid1" class="heading">Kalender</div> -->
@@ -56,61 +85,61 @@
         </div>
         <div id="calGrid3">
 
-          <div id="0-1" class="dayName">Mandag</div>
-          <div id="0-2" class="dayName">Tirsdag</div>
-          <div id="0-3" class="dayName">Onsdag</div>
-          <div id="0-4" class="dayName">Torsdag</div>
-          <div id="0-5" class="dayName">Fredag</div>
-          <div id="0-6" class="dayName">Lørdag</div>
-          <div id="0-7" class="dayName">Søndag</div>
+          <div id="0-1" class="dayName weekday">Mandag</div>
+          <div id="0-2" class="dayName weekday">Tirsdag</div>
+          <div id="0-3" class="dayName weekday">Onsdag</div>
+          <div id="0-4" class="dayName weekday">Torsdag</div>
+          <div id="0-5" class="dayName weekday">Fredag</div>
+          <div id="0-6" class="dayName weekend">Lørdag</div>
+          <div id="0-7" class="dayName weekend">Søndag</div>
 
           <div id="1-1" class="calCell"></div>
           <div id="1-2" class="calCell"></div>
           <div id="1-3" class="calCell"></div>
           <div id="1-4" class="calCell"></div>
           <div id="1-5" class="calCell"></div>
-          <div id="1-6" class="calCell"></div>
-          <div id="1-7" class="calCell"></div>
+          <div id="1-6" class="calCell weekend"></div>
+          <div id="1-7" class="calCell weekend"></div>
 
           <div id="2-1" class="calCell"></div>
           <div id="2-2" class="calCell"></div>
           <div id="2-3" class="calCell"></div>
           <div id="2-4" class="calCell"></div>
           <div id="2-5" class="calCell"></div>
-          <div id="2-6" class="calCell"></div>
-          <div id="2-7" class="calCell"></div>
+          <div id="2-6" class="calCell weekend"></div>
+          <div id="2-7" class="calCell weekend"></div>
 
           <div id="3-1" class="calCell"></div>
           <div id="3-2" class="calCell"></div>
           <div id="3-3" class="calCell"></div>
           <div id="3-4" class="calCell"></div>
           <div id="3-5" class="calCell"></div>
-          <div id="3-6" class="calCell"></div>
-          <div id="3-7" class="calCell"></div>
+          <div id="3-6" class="calCell weekend"></div>
+          <div id="3-7" class="calCell weekend"></div>
 
           <div id="4-1" class="calCell"></div>
           <div id="4-2" class="calCell"></div>
           <div id="4-3" class="calCell"></div>
           <div id="4-4" class="calCell"></div>
           <div id="4-5" class="calCell"></div>
-          <div id="4-6" class="calCell"></div>
-          <div id="4-7" class="calCell"></div>
+          <div id="4-6" class="calCell weekend"></div>
+          <div id="4-7" class="calCell weekend"></div>
 
           <div id="5-1" class="calCell"></div>
           <div id="5-2" class="calCell"></div>
           <div id="5-3" class="calCell"></div>
           <div id="5-4" class="calCell"></div>
           <div id="5-5" class="calCell"></div>
-          <div id="5-6" class="calCell"></div>
-          <div id="5-7" class="calCell"></div>
+          <div id="5-6" class="calCell weekend"></div>
+          <div id="5-7" class="calCell weekend"></div>
 
           <div id="6-1" class="calCell"></div>
           <div id="6-2" class="calCell"></div>
           <div id="6-3" class="calCell"></div>
           <div id="6-4" class="calCell"></div>
           <div id="6-5" class="calCell"></div>
-          <div id="6-6" class="calCell"></div>
-          <div id="6-7" class="calCell"></div>
+          <div id="6-6" class="calCell weekend"></div>
+          <div id="6-7" class="calCell weekend"></div>
         </div>
       </div>
 
@@ -121,4 +150,5 @@
 </body>
 <script type="text/javascript" src="javascript/startup.js"></script>
 <script type="text/javascript" src="javascript/calendar.js"></script>
+<script type="text/javascript" src="javascript/useradmin.js"></script>
 </html>

@@ -1,5 +1,7 @@
 CREATE TABLE "Events" (
- id text PRIMARY KEY,
+ eventid serial PRIMARY KEY,
+ eventtime text NOT NULL,
  short text NOT NULL,
- description text NOT NULL'
+ description text,
+ createdby text NOT NULL
 )
