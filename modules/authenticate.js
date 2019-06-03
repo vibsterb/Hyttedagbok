@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router();
 const db = require("./dbconnect.js");
-//const bcrypt = require('bcrypt');
-//const saltRounds = 10;
+const bcrypt = require('bcrypt');
+const saltRounds = 12;
 const jwt = require('jsonwebtoken');
 
-const TOKEN_KEY = process.env.TOKEN_KEY || '';
+const TOKEN_KEY = process.env.TOKEN_KEY || 'ilovefluffyblueelephants';
 
 router.get('/app/authenticate', async function(req, res, next){
   let authHeader = req.headers.authorization;
@@ -22,20 +22,18 @@ router.get('/app/authenticate', async function(req, res, next){
     let password = credentials.split(':')[1];
 
     let sql = `select id, fullname, username, email, role, password from public."Users"
-    where "username" = '${username}' and "password" = '${password}';`
+    where "username" = '${username}';`
 
     try {
       let user = await db.runQuery(sql);
       if(user.length>0) {
-      /*  let correct = await bcrypt.compare(password, user[0].password)
+        let correct = await bcrypt.compare(password, user[0].password)
         .then(function(res){
           return res;
-        });*/
-        let correct = true;
+        });
 
         if(correct){
           let token = jwt.sign({username: username}, TOKEN_KEY);
-          //let token = 'tempToken';
 
           delete user[0].password;
 
@@ -59,7 +57,7 @@ router.get('/app/authenticate', async function(req, res, next){
 
 });
 
-/*router.verifyToken = function(req, res, next){
+router.verifyToken = function(req, res, next){
   let token = req.headers['x-access-token'];
 
   jwt.verify(token, TOKEN_KEY, function(err) {
@@ -70,9 +68,9 @@ router.get('/app/authenticate', async function(req, res, next){
         }
   });
 
-}*/
+}
 
-/*router.crypt = async function(req, res, next){
+router.crypt = async function(req, res, next){
 
   await bcrypt.hash(req.body.password, saltRounds, function(err, hashed){
     if (err) {
@@ -83,6 +81,6 @@ router.get('/app/authenticate', async function(req, res, next){
     }
   })
 
-};*/
+};
 
 module.exports = router;

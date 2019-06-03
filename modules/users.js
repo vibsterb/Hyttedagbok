@@ -3,10 +3,10 @@ const router = express.Router();
 const db = require("./dbconnect.js");
 const auth = require('./authenticate.js');
 
-router.post('/app/user/updatePassword', async function(req, res, next){
+router.post('/app/user/updatePassword', auth.verifyToken, auth.crypt, async function(req, res, next){
 
   let username = req.body.username;
-  let password = req.body.password;
+  let password = req.hashed;
 
   try {
 
