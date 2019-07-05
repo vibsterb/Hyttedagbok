@@ -5,7 +5,6 @@ function userAdmin(){
 
 }
 
-
 //oppdaterer brukers passord
 async function updateUser(evt){
   evt.preventDefault();

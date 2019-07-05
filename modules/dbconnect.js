@@ -2,6 +2,7 @@ const { Client } = require('pg');
 const connectionString = process.env.DATABASE_URL;
 const localConnectionString = '';
 
+
 const db = {}
 
 db.runQuery = async function(sql){

@@ -10,11 +10,13 @@
 <body>
   <div class="wrapper">
 
-    <div id="menu">
-      <div class="menuDiv">
+    <div id="menu" class="menuHeader">
+      <div class="menuDiv" >
         <div id="menuBtn"><img id="menuImg" src="images/menu24.png"></div>
+        <div id="menuBack"><img id="backImg" src="images/back-arrow24.png"></div>
         <div id="menu-content">
-          <!--  <div id="logout">Logg ut</div>-->
+          <br>
+          <div id="logout">Logg ut</div>
         </div>
       </div>
     </div>
@@ -42,15 +44,13 @@
 
     <template id="menuTemplate">
       <div id=menuContainer>
-        <div id="menuHeader">
-          <span>Menylinje med menyikon</span>
+        <div id="menuUpper">
         </div>
-
-        <div id="menuBody">
-          <div id="calButton">Kalender</div>
+        <div id="menuBody" class="headingSmall">
+          <div id="calButton" class="pointer">Kalender</div>
           <div>Gjestebok</div>
           <div>Vedlikehold</div>
-          <div id="userAdmin" style="display: none;">Brukeradministrasjon</div>
+          <div id="userAdmin"  class="pointer" style="display: none;">Brukeradministrasjon</div>
 
         </div>
 
@@ -61,7 +61,7 @@
     <template id="admin">
       <div>
         <form id="updUser" class="loginInputFrame">
-          <span>Brukeradministrasjon</span>
+          <span class="blueGreen">Brukeradministrasjon</span>
           <input id="username" type="text" placeholder=" brukernavn" required>
           <input id="newPassword" type="password" placeholder=" passord" required>
           <button class="button">Sett nytt passord</button>
@@ -148,7 +148,8 @@
   </div>
 
 </body>
-<script type="text/javascript" src="javascript/startup.js"></script>
+<script type="text/javascript" src="javascript/userinfo.js"></script>
+<script type="text/javascript" src="javascript/controller.js"></script>
 <script type="text/javascript" src="javascript/calendar.js"></script>
 <script type="text/javascript" src="javascript/useradmin.js"></script>
 </html>
