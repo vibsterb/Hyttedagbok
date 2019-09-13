@@ -4,9 +4,7 @@ let selectedMonth;
 let today = new Date();
 let months = ['Januar','Februar','Mars','April','Mai','Juni',
 'Juli','August','September','Oktober','November','Desember'];
-
-
-//addTemplate("calTemplate");
+let eventTime;
 
 function calView(){
   getYear();
@@ -55,21 +53,21 @@ function prevMonth(){
   showCal();
 }
 
-//inneværende år
+//current year
 function getYear(){
   let year = document.getElementById("currentYear");
   year.innerHTML = today.getFullYear();
   selectedYear =  today.getFullYear();
 }
 
-//inneværende måned
+//current month
 function getMonth(){
   let month = document.getElementById("currentMonth");
   month.innerHTML = months[today.getMonth()];
   selectedMonth = today.getMonth();
 }
 
-//viser kalender for valgt måned
+//shows calendar for chosen month
 function showCal(){
   let cal = document.getElementById("calGrid3");
   clearCells();
@@ -88,26 +86,59 @@ function showCal(){
     if(weekday === 0){
       let div = document.getElementById(row +"-"+ "7");
       div.innerHTML = i;
-      row++;  //etter søndag øker kalenderrad med 1
+      row++;  //increase calendar row after sunday
       div.onclick = newEvent;
+      div.classList.add("pointer");
     }
     else {
       let div = document.getElementById(row +"-"+ weekday);
       div.innerHTML = i;
       div.onclick = newEvent;
+      div.classList.add("pointer");
     }
   }
 }
 
-//tømmer alt innhold i kalendercellene
+//empty contents in calendar cells
 function clearCells() {
   let cells = document.getElementsByClassName("calCell");
+
   for(let i=0; i<cells.length; i++){
-    cells[i].innerHTML ="";
+    cells[i].innerHTML = "";
+    cells[i].onclick = "";
+    cells[i].classList.remove("pointer");
   }
 }
 
-//legge til ny hendelse i kalenderen
+//add new event in calendar
 function newEvent(evt) {
-  console.log(evt.target);
+  eventTime = evt.target.innerHTML + "-" + (selectedMonth+1) + "-" + selectedYear;
+  let eventBox = document.getElementById("eventModal");
+  eventBox.style.display = "block";
+
+  let newEv = document.getElementById("modalFrame");
+  newEv.onclick = createNewEvent;
+
+  let text = document.getElementById("eventHead");
+  text.innerHTML = 'Ny hendelse ' + eventTime;
+}
+
+function createNewEvent(evt){
+  evt.preventDefault();
+  let inputText = document.getElementById("desc");
+  let eventBox = document.getElementById("eventModal");
+
+  if(evt.target.id === "eventSave") {
+    let desc = inputText.value;
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    //kall på db for oppretting av event
+    dbEvent(desc, eventTime, user.username);
+    inputText.value = "";
+    eventBox.style.display = "none";
+  }
+  else if(evt.target.id === "eventCancel") {
+    inputText.value = "";
+    eventBox.style.display = "none";
+  }
 }

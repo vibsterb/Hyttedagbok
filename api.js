@@ -21,3 +21,11 @@ METHOD: POST
 ENDPOINT: /app/user/getUser
 BODY (json):  {"userid": int, "username": string, "role": string}
 RESPONSE (json): {"fullname": string}
+
+/*----- events.js -----*/
+
+// createEvent
+METHOD: POST
+ENDPOINT: /app/event/createEvent
+BODY (json):  {"description": string, "eventtime": string, "createdby": string}
+RESPONSE (json): {"eventid": int}

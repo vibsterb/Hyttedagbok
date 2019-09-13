@@ -27,7 +27,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 5% auto;
-    height: 100%;
+    height: 90%;
   }
 
   #menuUpper {
@@ -49,7 +49,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 4.5em 3em auto;
-    height: 100%;
+    height: 90%;
   }
 
   #calGrid1 {
@@ -96,7 +96,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 4.5em 3em auto;
-    height: 100%;
+    height: 90%;
   }
 
   #calGrid1 {
